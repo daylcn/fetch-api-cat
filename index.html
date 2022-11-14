@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content='yes' name='apple-mobile-web-app-capable' />
+    <meta content='yes' name='mobile-web-app-capable' />
+    <meta name="apple-mobile-web-app-status-bar" content="#aa7700">
+    <meta name="theme-color" content="black">
+  <link rel="stylesheet" href="index.css">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="assets/logos/icon-192x192.png">
+  
+  <title>1 CLICK = 1 GATO</title>
+</head>
+
+
+
+<body>
+  
+
+
+  <div id="vote-options" class="vote-options"> 
+         
+      <img id="image-to-vote-on" class="col-lg"></img>       
+      <button  id="button" class="button" onClick="vote(1)">1 CLIQUE = 1 GATO  </button>
+ 
+  </div>
+
+  <div id="vote-results" class="vote-results">
+    
+    <div id="grid" class="imgrid">
+    
+
+
+ 
+    </div>
+
+
+    <script src="index.js"> </script>
+    <script> 
+      document.addEventListener("DOMContentLoaded", function (event) {
+          if ('serviceWorker' in navigator) {
+              console.log('has serviceworker');
+              window.addEventListener('load', () => {
+                  navigator.serviceWorker.register('serviceWorker.js')
+                      .then((registration) => {
+                          console.log('Service worker registered.', registration);
+                      });
+              });
+          }
+          else {
+              console.log("Your browser not supports serviceWorkers");
+          }
+      
+      }); 
+      </script>   
+
+</body>
+
+</html>
